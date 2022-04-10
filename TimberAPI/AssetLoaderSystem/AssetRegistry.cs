@@ -62,7 +62,7 @@ namespace TimberbornAPI.AssetLoaderSystem
 
             try
             {
-                Plugin plugin = new Plugin(prefix, assetLocation, assemblyFolder, loadingScene);
+                Plugin plugin = new(prefix, assetLocation, assemblyFolder, loadingScene);
                 List<string[]> relativeAssetPaths = ModPluginAssetRelativePathFinder(plugin.AssemblyPath, Path.Combine(plugin.RootPath));
                 foreach (string[] relativeAssetPath in relativeAssetPaths)
                 {
@@ -120,7 +120,7 @@ namespace TimberbornAPI.AssetLoaderSystem
         /// <returns></returns>
         private List<string> RecursiveAssetSearch(string absolutePath)
         {
-            List<string> assetLocations = new List<string>();
+            List<string> assetLocations = new();
             assetLocations.AddRange(AssetsInFolder(absolutePath));
             foreach (string directory in Directory.GetDirectories(absolutePath))
             {

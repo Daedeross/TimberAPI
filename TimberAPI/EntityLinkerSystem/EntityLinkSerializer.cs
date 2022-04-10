@@ -8,14 +8,14 @@ namespace TimberbornAPI.EntityLinkerSystem
     /// </summary>
     public class EntityLinkSerializer : IObjectSerializer<EntityLink>
     {
-        protected static readonly PropertyKey<EntityLinker> LinkerKey = new PropertyKey<EntityLinker>("Linker");
-        protected static readonly PropertyKey<EntityLinker> LinkeeKey = new PropertyKey<EntityLinker>("Linkee");
+        protected static readonly PropertyKey<EntityLinker> LinkerKey = new("Linker");
+        protected static readonly PropertyKey<EntityLinker> LinkeeKey = new("Linkee");
 
         public virtual Obsoletable<EntityLink> Deserialize(IObjectLoader objectLoader)
         {
-            var linker = objectLoader.Get(LinkerKey);
-            var linkee = objectLoader.Get(LinkeeKey);
-            var link = new EntityLink(linker, linkee);
+            EntityLinker linker = objectLoader.Get(LinkerKey);
+            EntityLinker linkee = objectLoader.Get(LinkeeKey);
+            EntityLink link = new(linker, linkee);
             return link;
         }
 

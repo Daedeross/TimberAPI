@@ -21,20 +21,15 @@ namespace TimberbornAPI.LocalizationSystem
         /// <returns></returns>
         public static Dictionary<string, string> GetLocalization(string localizationKey)
         {
-            Dictionary<string, string> dictionary1 = new Dictionary<string, string>();
+            Dictionary<string, string> dictionary1 = new();
             Dictionary<string, string> dictionary2 = GetLocalizationRecordsFromFiles(localizationKey, GetLocalizationFilePathsFromDependencies(localizationKey)).ToDictionary(record => record.Id, record => record.Text);
 
             foreach (LocalizationRecord localizationRecord in GetDefaultLocalization())
             {
                 string id = localizationRecord.Id;
-                if (dictionary2.TryGetValue(id, out string text) && !string.IsNullOrEmpty(text))
-                {
-                    dictionary1[id] = TextColors.ColorizeText(text);
-                }
-                else
-                {
-                    dictionary1[id] = TextColors.ColorizeText(localizationRecord.Text);
-                }
+                dictionary1[id] = dictionary2.TryGetValue(id, out string text) && !string.IsNullOrEmpty(text)
+                    ? TextColors.ColorizeText(text)
+                    : TextColors.ColorizeText(localizationRecord.Text);
             }
 
             return dictionary1;
@@ -74,10 +69,10 @@ namespace TimberbornAPI.LocalizationSystem
             {
                 string message = "Unable to parse file for " + localization + ".";
                 if (ex is AggregatedException aggregatedException1)
-                    message = message + " First error: " + ((List<Exception>)aggregatedException1.m_InnerExceptionsList)[0].Message;
+                    message = message + " First error: " + aggregatedException1.m_InnerExceptionsList[0].Message;
                 if (localization == LocalizationCodes.Default)
                     throw new InvalidDataException(message, ex);
-                Log.LogError((object)message);
+                Log.LogError(message);
                 return new List<LocalizationRecord>();
             }
         }
@@ -85,7 +80,10 @@ namespace TimberbornAPI.LocalizationSystem
         /// <summary>
         /// Returns the default localization
         /// </summary>
-        private static IEnumerable<LocalizationRecord> GetDefaultLocalization() => GetLocalizationRecordsFromFiles(LocalizationCodes.Default, GetLocalizationFilePathsFromDependencies(LocalizationCodes.Default));
+        private static IEnumerable<LocalizationRecord> GetDefaultLocalization()
+        {
+            return GetLocalizationRecordsFromFiles(LocalizationCodes.Default, GetLocalizationFilePathsFromDependencies(LocalizationCodes.Default));
+        }
 
         /// <summary>
         /// Searches for depencies
@@ -94,7 +92,7 @@ namespace TimberbornAPI.LocalizationSystem
         /// <returns></returns>
         private static List<string> GetLocalizationFilePathsFromDependencies(string localizationKey)
         {
-            List<string> localizationFilePaths = new List<string>();
+            List<string> localizationFilePaths = new();
             foreach (KeyValuePair<string, BepInEx.PluginInfo> keyValuePair in Chainloader.PluginInfos.Where(kv => kv.Value.Dependencies.Any(dep => dep.DependencyGUID == TimberAPIPlugin.Guid)))
             {
                 string pluginLocalizationPath = Path.Combine(Path.GetDirectoryName(keyValuePair.Value.Location) ?? string.Empty, LocalizationPathKey);

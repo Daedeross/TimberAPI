@@ -37,25 +37,22 @@ namespace TimberAPIExample.Examples.EntityLinkerExample
                 return;
             }
 
-            foreach (var link in _linker.EntityLinks)
+            foreach (EntityLink link in _linker.EntityLinks)
             {
-                var buildingToPause = link.Linker == _linker
+                PausableBuilding buildingToPause = link.Linker == _linker
                     ? link.Linkee.GetComponent<PausableBuilding>()
                     : link.Linker.GetComponent<PausableBuilding>();
-                if (_stockpile.Inventory
-                         .Stock
-                         .Where(x => x.GoodSpecification.Id.Contains("Berr"))
-                         .FirstOrDefault()
-                         .Amount > 150)
+                if (_stockpile.Inventory.Stock
+                    .FirstOrDefault(x => x.GoodSpecification.Id.Contains("Berr")).Amount > 150)
                 {
-                    if (buildingToPause.Paused == false)
+                    if (!buildingToPause.Paused)
                     {
                         buildingToPause.Pause();
                     }
                 }
                 else
                 {
-                    if (buildingToPause.Paused == true)
+                    if (buildingToPause.Paused)
                     {
                         buildingToPause.Resume();
                     }

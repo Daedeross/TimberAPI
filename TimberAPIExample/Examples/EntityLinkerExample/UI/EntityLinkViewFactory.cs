@@ -1,5 +1,6 @@
 ﻿using TimberbornAPI.Common;
 using TimberbornAPI.UIBuilderSystem;
+using TimberbornAPI.UIBuilderSystem.ElementSystem;
 using UnityEngine;
 using UnityEngine.UIElements;
 using static UnityEngine.UIElements.Length.Unit;
@@ -26,7 +27,7 @@ namespace TimberAPIExample.Examples.EntityLinkerExample.UI
         /// <returns></returns>
         public virtual VisualElement Create(string buttonLabelText)
         {
-            var rootBuilder =
+            VisualElementBuilder rootBuilder =
                     _builder.CreateComponentBuilder()
                             .CreateVisualElement()
                             .AddComponent(
@@ -54,9 +55,7 @@ namespace TimberAPIExample.Examples.EntityLinkerExample.UI
 
 
 
-            var root = rootBuilder.BuildAndInitialize();
-
-            return root;
+            return rootBuilder.BuildAndInitialize();
         }
 
         private VisualElement CreateLinkButton(string buttonLabelText)

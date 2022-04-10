@@ -12,12 +12,12 @@ namespace TimberbornAPI.DependencySystem
     [HarmonyPatch]
     public class DependencyRegistry : IDependencyRegistry
     {
-        private static Dictionary<SceneEntryPoint, List<IConfigurator>> configuratorsByEntryPointFirst = new();
-        private static Dictionary<SceneEntryPoint, List<IConfigurator>> configuratorsByEntryPointLast = new();
+        private static readonly Dictionary<SceneEntryPoint, List<IConfigurator>> configuratorsByEntryPointFirst = new();
+        private static readonly Dictionary<SceneEntryPoint, List<IConfigurator>> configuratorsByEntryPointLast = new();
 
         public void AddConfigurator(IConfigurator configurator, SceneEntryPoint entryPoint = SceneEntryPoint.InGame)
         {
-            if (configuratorsByEntryPointLast.TryGetValue(entryPoint, out var configurators))
+            if (configuratorsByEntryPointLast.TryGetValue(entryPoint, out List<IConfigurator> configurators))
             {
                 configurators.Add(configurator);
             }
@@ -37,7 +37,7 @@ namespace TimberbornAPI.DependencySystem
 
         public void AddConfiguratorBeforeLoad(IConfigurator configurator, SceneEntryPoint entryPoint = SceneEntryPoint.InGame)
         {
-            if (configuratorsByEntryPointFirst.TryGetValue(entryPoint, out var configurators))
+            if (configuratorsByEntryPointFirst.TryGetValue(entryPoint, out List<IConfigurator> configurators))
             {
                 configurators.Add(configurator);
             }

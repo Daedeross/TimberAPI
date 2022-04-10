@@ -18,10 +18,10 @@ namespace TimberbornAPI.EntityLinkerSystem
     public class EntityLinker : MonoBehaviour, IFinishedStateListener, IPersistentEntity
     {
         //Keys for saving/loading
-        protected static readonly ComponentKey EntityLinkerKey = new ComponentKey("EntityLinker");
-        protected static readonly ListKey<EntityLink> EntityLinksKey = new ListKey<EntityLink>(nameof(EntityLinks));
+        protected static readonly ComponentKey EntityLinkerKey = new("EntityLinker");
+        protected static readonly ListKey<EntityLink> EntityLinksKey = new(nameof(EntityLinks));
 
-        internal readonly List<EntityLink> _entityLinks = new List<EntityLink>();
+        internal readonly List<EntityLink> _entityLinks = new();
         public IReadOnlyCollection<EntityLink> EntityLinks { get; private set; }
 
         public virtual void Awake()
@@ -52,13 +52,13 @@ namespace TimberbornAPI.EntityLinkerSystem
             IObjectLoader component = entityLoader.GetComponent(EntityLinkerKey);
             if (component.Has(EntityLinksKey))
             {
-                var links = component.Get(EntityLinksKey);
+                List<EntityLink> links = component.Get(EntityLinksKey);
                 if (links == null)
                 {
                     return;
                 }
-                var linkerLinks = links.Where(x => x.Linker == this).ToList(); 
-                foreach (var link in linkerLinks)
+                List<EntityLink> linkerLinks = links.Where(x => x.Linker == this).ToList(); 
+                foreach (EntityLink link in linkerLinks)
                 {
                     AddLinkInLinkee(link);
                 }
@@ -90,7 +90,7 @@ namespace TimberbornAPI.EntityLinkerSystem
                 Log.LogWarning($"Tried to link entity with itself. Stopped linking.");
                 return;
             }
-            var link = new EntityLink(this, linkee);
+            EntityLink link = new(this, linkee);
             AddLink(link);
             AddLinkInLinkee(link);
         }
@@ -151,7 +151,7 @@ namespace TimberbornAPI.EntityLinkerSystem
         /// </summary>
         public virtual void RemoveAllLinks()
         {
-            foreach (var link in EntityLinks)
+            foreach (EntityLink link in EntityLinks)
             {
                 if(link.Linker == this)
                 {

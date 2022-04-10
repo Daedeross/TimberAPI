@@ -51,8 +51,8 @@ namespace TimberbornAPI.AssetLoaderSystem.PluginSystem
         private bool PluginPrefixInUse(Plugin plugin)
         {
             return _plugins.Any(p => (p.Prefix == plugin.Prefix && p.LoadingScene == plugin.LoadingScene)
-                                                || p.Prefix == plugin.Prefix && (p.LoadingScene == SceneEntryPoint.Global
-                                                    || plugin.LoadingScene == SceneEntryPoint.Global));
+                                                || (p.Prefix == plugin.Prefix && (p.LoadingScene == SceneEntryPoint.Global
+                                                    || plugin.LoadingScene == SceneEntryPoint.Global)));
         }
     }
 }

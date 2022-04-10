@@ -39,7 +39,10 @@ namespace TimberbornAPI.UIBuilderSystem.CustomElements
             text = loc.T(_textLocKey);
         }
 
-        private void OnCustomStyleResolved(CustomStyleResolvedEvent e) => _nineSliceBackground.GetDataFromStyle(customStyle);
+        private void OnCustomStyleResolved(CustomStyleResolvedEvent e)
+        {
+            _nineSliceBackground.GetDataFromStyle(customStyle);
+        }
 
         private new void OnGenerateVisualContent(MeshGenerationContext mgc)
         {

@@ -14,7 +14,9 @@ namespace TimberbornAPI.UIBuilderSystem.CustomElements
             set
             {
                 if (string.IsNullOrWhiteSpace(_textLocKey))
+                {
                     _textLocKey = value;
+                }
             }
         }
 
@@ -34,13 +36,19 @@ namespace TimberbornAPI.UIBuilderSystem.CustomElements
 
         public void Localize(ILoc loc)
         {
-            if(_textLocKey == null)
+            if (_textLocKey == null)
+            {
                 return;
+            }
+
             text = loc.T(_textLocKey);
         }
 
         #pragma warning disable CS0108, CS0114
-        private void OnCustomStyleResolved(CustomStyleResolvedEvent e) => _nineSliceBackground.GetDataFromStyle(customStyle);
+        private void OnCustomStyleResolved(CustomStyleResolvedEvent e)
+        {
+            _nineSliceBackground.GetDataFromStyle(customStyle);
+        }
 
         private void OnGenerateVisualContent(MeshGenerationContext mgc)
         {

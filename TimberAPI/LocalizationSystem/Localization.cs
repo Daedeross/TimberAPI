@@ -10,7 +10,7 @@ namespace TimberbornAPI.LocalizationSystem
     [HarmonyPatch]
     public class Localization : ILocalization
     {
-        private static Dictionary<string, string> labelsToInject = new();
+        private static readonly Dictionary<string, string> labelsToInject = new();
 
         /// <summary>
         /// Add a label into the current localization

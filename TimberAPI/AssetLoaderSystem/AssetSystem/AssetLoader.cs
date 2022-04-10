@@ -30,8 +30,8 @@ namespace TimberbornAPI.AssetLoaderSystem.AssetSystem
             try
             {
                 string[] slicedPath = path.Split("/");
-                string fileName = slicedPath[slicedPath.Length - 2];
-                string name = slicedPath[slicedPath.Length - 1];
+                string fileName = slicedPath[^2];
+                string name = slicedPath[^1];
                 string[] assetPath = slicedPath.Take(slicedPath.Length - 2).ToArray();
                 return Load<T>(prefix, assetPath, fileName, name);
             }
@@ -93,7 +93,7 @@ namespace TimberbornAPI.AssetLoaderSystem.AssetSystem
             try
             {
                 string[] slicedPath = path.Split("/");
-                string fileName = slicedPath[slicedPath.Length - 1];
+                string fileName = slicedPath[^1];
                 string[] assetPath = slicedPath.Take(slicedPath.Length - 1).ToArray();
                 return LoadAll<T>(prefix, assetPath, fileName);
             }

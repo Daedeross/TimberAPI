@@ -56,7 +56,7 @@ namespace TimberbornAPI.UIBuilderSystem.ElementSystem
         
         public TBuilder AddComponent(Action<VisualElementBuilder> builder)
         {
-            VisualElementBuilder visualElementBuilder = new VisualElementBuilder(_visualElementInitializer, _assetLoader, _uiPresetFactory);
+            VisualElementBuilder visualElementBuilder = new(_visualElementInitializer, _assetLoader, _uiPresetFactory);
             builder(visualElementBuilder);
             Root.Add(visualElementBuilder.Build());
             return BuilderInstance;

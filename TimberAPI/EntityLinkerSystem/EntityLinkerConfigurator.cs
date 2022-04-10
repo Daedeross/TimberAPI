@@ -14,7 +14,7 @@ namespace TimberbornAPI.EntityLinkerSystem
 
         private static TemplateModule ProvideTemplateModule()
         {
-            TemplateModule.Builder builder = new TemplateModule.Builder();
+            TemplateModule.Builder builder = new();
             builder.AddDecorator<Building, EntityLinker>();
             return builder.Build();
         }
