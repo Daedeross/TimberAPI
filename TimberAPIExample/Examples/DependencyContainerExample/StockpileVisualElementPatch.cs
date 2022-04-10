@@ -10,7 +10,7 @@ namespace TimberAPIExample.Examples.DependencyContainerExample
     [HarmonyPatch(typeof(StockpileInventoryFragment), "InitializeFragment")]
     public static class StockpileVisualElementPatch
     {
-        private static void Postfix(VisualElement __result)
+        static void Postfix(VisualElement __result)
         {
             // Finds the singleton from the dependency injection system (Can any class that's connected with Bindito DI) 
             UIBuilder builder = TimberAPI.DependencyContainer.GetInstance<UIBuilder>();

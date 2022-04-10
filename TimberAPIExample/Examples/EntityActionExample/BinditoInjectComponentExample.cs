@@ -15,7 +15,7 @@ namespace TimberAPIExample.Examples.EntityActionExample
             _loc = loc;
         }
 
-        private void Start()
+        public void Start()
         {
             Console.WriteLine(_loc.T("preview.bindito.start"));
         }

@@ -32,7 +32,7 @@ namespace TimberAPIExample.Examples.EntityLinkerExample.UI
         protected readonly SelectionManager _selectionManager;
         protected readonly ILoc _loc;
 
-        private int _maxLinks = 5;
+        private readonly int _maxLinks = 5;
 
         private T _component;
 
@@ -125,25 +125,27 @@ namespace TimberAPIExample.Examples.EntityLinkerExample.UI
             ReadOnlyCollection<EntityLink> links = (ReadOnlyCollection<EntityLink>)_entityLinker.EntityLinks;
             for (int i = 0; i < links.Count; i++)
             {
-                var link = links[i];
+                EntityLink link = links[i];
 
-                var linkee = link.Linker == _entityLinker
+                EntityLinker linkee = link.Linker == _entityLinker
                     ? link.Linkee
                     : link.Linker;
 
-                var linkeeGameObject = (linkee).gameObject;
+                GameObject linkeeGameObject = linkee.gameObject;
 
-                var prefab = linkeeGameObject.GetComponent<LabeledPrefab>();
-                var sprite = prefab.Image;
+                LabeledPrefab prefab = linkeeGameObject.GetComponent<LabeledPrefab>();
+                Sprite sprite = prefab.Image;
 
-                var view = _entityLinkViewFactory.Create(_loc.T(prefab.DisplayNameLocKey));
+                VisualElement view = _entityLinkViewFactory.Create(_loc.T(prefab.DisplayNameLocKey));
 
-                var imageContainer = view.Q<VisualElement>("ImageContainer");
-                var img = new Image();
-                img.sprite = sprite;
+                VisualElement imageContainer = view.Q<VisualElement>("ImageContainer");
+                Image img = new()
+                {
+                    sprite = sprite
+                };
                 imageContainer.Add(img);
 
-                var targetButton = view.Q<Button>("Target");
+                Button targetButton = view.Q<Button>("Target");
                 targetButton.clicked += delegate
                 {
                     _selectionManager.FocusOn(linkeeGameObject);

@@ -31,7 +31,7 @@ namespace TimberAPIExample.Examples.CustomObjectRegistryExample
             customObject.AddComponent<BasicLabeledPrefab>();
 
             // A hack to fix shaders. Unknown how to fix this at the moment
-            var platformModel = _resourceAssetLoader.Load<GameObject>("Buildings/Paths/Platform/Platform.Full.Folktails");
+            GameObject platformModel = _resourceAssetLoader.Load<GameObject>("Buildings/Paths/Platform/Platform.Full.Folktails");
             FixMaterialShader(customObject, platformModel.GetComponent<MeshRenderer>().materials[0].shader);
 
             // Tell TimberAPI to add the building
@@ -39,12 +39,12 @@ namespace TimberAPIExample.Examples.CustomObjectRegistryExample
         }
 
         // Re-apply shaders to our custom object using the shaders from an in game object
-        static void FixMaterialShader(GameObject obj, Shader shader)
+        private static void FixMaterialShader(GameObject obj, Shader shader)
         {
-            var meshRenderer = obj.GetComponent<MeshRenderer>();
+            MeshRenderer meshRenderer = obj.GetComponent<MeshRenderer>();
             if (meshRenderer)
             {
-                foreach (var mat in meshRenderer.materials)
+                foreach (Material mat in meshRenderer.materials)
                 {
                     mat.shader = shader;
                 }

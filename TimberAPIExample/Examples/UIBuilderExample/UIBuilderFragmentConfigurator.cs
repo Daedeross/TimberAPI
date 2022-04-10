@@ -1,6 +1,5 @@
 using Bindito.Core;
 using Timberborn.EntityPanelSystem;
-using TimberbornAPI.DependencySystem;
 
 namespace TimberAPIExample.Examples.UIBuilderExample
 {
@@ -23,7 +22,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample
         
             public EntityPanelModule Get()
             {
-                EntityPanelModule.Builder builder = new EntityPanelModule.Builder();
+                EntityPanelModule.Builder builder = new();
                 builder.AddBottomFragment(_fragmentExample);
                 return builder.Build();
             }

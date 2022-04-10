@@ -21,9 +21,7 @@ namespace TimberbornAPI.AssetLoaderSystem.AssetSystem
         public CustomAssetBundle FindByPathAndFileName(string[] path, string fileName)
         {
             CustomAssetBundle bundle = _assetBundles.FirstOrDefault(bundle => bundle.AssetPath.SequenceEqual(path) && bundle.FileName == fileName);
-            if (bundle == null)
-                throw new AssetNotFoundException();
-            return bundle;
+            return bundle ?? throw new AssetNotFoundException();
         }
 
         public IEnumerable<CustomAssetBundle> All()

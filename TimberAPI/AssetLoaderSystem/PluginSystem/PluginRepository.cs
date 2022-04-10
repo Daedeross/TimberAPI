@@ -25,9 +25,7 @@ namespace TimberbornAPI.AssetLoaderSystem.PluginSystem
             Plugin modPlugin = _plugins.FirstOrDefault(plugin => plugin.Prefix == prefix && (plugin.LoadingScene == AssetRegistry.ActiveScene
                 || plugin.LoadingScene == SceneEntryPoint.Global));
 
-            if (modPlugin == null)
-                throw new PrefixNotFoundException(prefix);
-            return modPlugin;
+            return modPlugin ?? throw new PrefixNotFoundException(prefix);
         }
 
         public void Add(Plugin plugin)

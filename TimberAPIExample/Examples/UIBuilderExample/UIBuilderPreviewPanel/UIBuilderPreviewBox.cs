@@ -43,7 +43,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel
                 .SetWidth(new Length(300, Pixel))
                 .ModifyBox(builder =>
                 {
-                    builder.SetMargin(new Margin(0,0,0,new Length(-300, Pixel)));
+                    builder.SetMargin(new Margin(0, 0, 0, new Length(-300, Pixel)));
                     builder.SetStyle(style => style.position = Position.Absolute);
                 });
             

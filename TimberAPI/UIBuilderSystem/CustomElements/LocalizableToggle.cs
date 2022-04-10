@@ -20,7 +20,7 @@ namespace TimberbornAPI.UIBuilderSystem.CustomElements
             }
         }
 
-        private readonly NineSliceBackground _nineSliceBackground = new NineSliceBackground();
+        private readonly NineSliceBackground _nineSliceBackground = new();
 
         public LocalizableToggle()
         {
@@ -53,7 +53,10 @@ namespace TimberbornAPI.UIBuilderSystem.CustomElements
         private void OnGenerateVisualContent(MeshGenerationContext mgc)
         {
             if (!_nineSliceBackground.IsNineSlice)
+            {
                 return;
+            }
+
             _nineSliceBackground.GenerateVisualContent(mgc, paddingRect);
         }
     }

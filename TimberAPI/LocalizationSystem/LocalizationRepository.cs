@@ -43,7 +43,7 @@ namespace TimberbornAPI.LocalizationSystem
         /// <returns></returns>
         private static IEnumerable<LocalizationRecord> GetLocalizationRecordsFromFiles(string localization, IEnumerable<string> filePaths)
         {
-            List<LocalizationRecord> records = new List<LocalizationRecord>();
+            List<LocalizationRecord> records = new();
             foreach (string path in filePaths)
             {
                 records.AddRange(TryToReadRecords(localization, path));
@@ -69,9 +69,15 @@ namespace TimberbornAPI.LocalizationSystem
             {
                 string message = "Unable to parse file for " + localization + ".";
                 if (ex is AggregatedException aggregatedException1)
+                {
                     message = message + " First error: " + aggregatedException1.m_InnerExceptionsList[0].Message;
+                }
+
                 if (localization == LocalizationCodes.Default)
+                {
                     throw new InvalidDataException(message, ex);
+                }
+
                 Log.LogError(message);
                 return new List<LocalizationRecord>();
             }
@@ -99,7 +105,10 @@ namespace TimberbornAPI.LocalizationSystem
                 (bool hasLocalization, string localizationName) = LocalizationNameOrDefault(pluginLocalizationPath, localizationKey);
 
                 if (!hasLocalization)
+                {
                     continue;
+                }
+
                 localizationFilePaths.Add(Path.Combine(pluginLocalizationPath, localizationName));
             }
 
@@ -123,10 +132,9 @@ namespace TimberbornAPI.LocalizationSystem
             if (File.Exists(Path.Combine(pluginLocalizationPath, localizationName + ".txt")))
                 return (true, localizationName + ".txt");
 
-            if (File.Exists(Path.Combine(pluginLocalizationPath, LocalizationCodes.Default + ".txt")))
-                return (true, LocalizationCodes.Default + ".txt");
-
-            return (false, "");
+            return File.Exists(Path.Combine(pluginLocalizationPath, LocalizationCodes.Default + ".txt"))
+                ? (true, LocalizationCodes.Default + ".txt")
+                : (false, "");
         }
     }
 }

@@ -31,7 +31,7 @@ namespace TimberAPIExample.Examples.EntityLinkerExample
 
             public EntityPanelModule Get()
             {
-                EntityPanelModule.Builder builder = new EntityPanelModule.Builder();
+                EntityPanelModule.Builder builder = new();
                 builder.AddBottomFragment(_linkerFragment);
                 return builder.Build();
             }
