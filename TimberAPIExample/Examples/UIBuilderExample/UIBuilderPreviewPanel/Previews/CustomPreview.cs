@@ -28,7 +28,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel.Previ
         {
             return "Custom elements";
         }
-        
+
         public VisualElement GetPreview()
         {
             VisualElementBuilder root = _uiBuilder.CreateComponentBuilder().CreateVisualElement();
@@ -50,7 +50,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel.Previ
                 .SetFlexDirection(FlexDirection.Row)
                 .SetHeight(new Length(50, Pixel))
                 .SetWidth(new Length(50, Pixel)).Build());
-            
+
             root.AddPreset(factory => factory.Labels().DefaultHeader("preview.customs.custombutton", builder: builder => builder.SetStyle(style => { style.alignSelf = Align.Center; style.marginBottom = new Length(10, Pixel); })));
             root.AddComponent(_uiBuilder.CreateComponentBuilder().CreateButton()
                 .AddClass(TimberApiStyle.Buttons.Normal.ArrowLeftInverted)
@@ -59,7 +59,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel.Previ
                 .AddClass(TimberApiStyle.Sounds.Click)
                 .SetHeight(new Length(50, Pixel))
                 .SetWidth(new Length(50, Pixel)).Build());
-            
+
             return root.Build();
         }
     }

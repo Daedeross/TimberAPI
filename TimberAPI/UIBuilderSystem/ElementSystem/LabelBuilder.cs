@@ -11,7 +11,7 @@ namespace TimberbornAPI.UIBuilderSystem.ElementSystem
     {
         protected override LabelBuilder BuilderInstance => this;
 
-        public LabelBuilder(VisualElementInitializer visualElementInitializer, IAssetLoader assetLoader, UiPresetFactory uiPresetFactory) 
+        public LabelBuilder(VisualElementInitializer visualElementInitializer, IAssetLoader assetLoader, UiPresetFactory uiPresetFactory)
             : base(new LocalizableLabel(), visualElementInitializer, assetLoader, uiPresetFactory)
         {
         }
@@ -21,7 +21,7 @@ namespace TimberbornAPI.UIBuilderSystem.ElementSystem
             Root.style.whiteSpace = whiteSpace;
             return this;
         }
-        
+
         public LabelBuilder SetText(string text)
         {
             Root.text = text;
@@ -33,19 +33,19 @@ namespace TimberbornAPI.UIBuilderSystem.ElementSystem
             Root.TextLocKey = key;
             return this;
         }
-        
+
         public LabelBuilder SetColor(StyleColor color)
         {
             Root.style.color = color;
             return this;
         }
-        
+
         public LabelBuilder SetFontSize(Length size)
         {
             Root.style.fontSize = size;
             return this;
         }
-        
+
         public LabelBuilder SetFontStyle(FontStyle style)
         {
             Root.style.unityFontStyleAndWeight = style;

@@ -32,12 +32,14 @@ namespace TimberbornAPI.Common
             Bottom = bottom;
             Left = left;
         }
-        
-        public static implicit operator Padding(int value) {
+
+        public static implicit operator Padding(int value)
+        {
             return new Padding(value);
         }
-        
-        public static implicit operator Padding(Length value) {
+
+        public static implicit operator Padding(Length value)
+        {
             return new Padding(value);
         }
     }

@@ -11,12 +11,12 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
     public class ListViewPresetFactory
     {
         private readonly ComponentBuilder _componentBuilder;
-        
+
         public ListViewPresetFactory(ComponentBuilder componentBuilder)
         {
             _componentBuilder = componentBuilder;
         }
-        
+
 
         /// <summary>
         /// Item text label name: ItemLabel
@@ -60,7 +60,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
                     dragElement.style.maxHeight = new Length(60, Pixel);
                 }, selectionType, width, height, name, builder);
         }
-        
+
         public ListView CustomListView(IList itemSource = default, Func<VisualElement> makeItem = default, Action<VisualElement, int> bindItem = default, Action<IEnumerable<object>> selectionChange = default, Action<Slider> scrollbarElement = default, Action<VisualElement> dragElement = default, SelectionType selectionType = SelectionType.Single, Length width = default, Length height = default, string name = default, Action<ListViewBuilder> builder = default)
         {
             ListViewBuilder listViewBuilder = _componentBuilder.CreateListView()
@@ -70,28 +70,28 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
                     scrollbarElement?.Invoke(scroller.slider);
                     dragElement?.Invoke(scroller.slider?.dragElement);
                 });
-            
-            if(selectionType != default)
+
+            if (selectionType != default)
                 listViewBuilder.SetSelectionType(selectionType);
 
-            if(selectionChange != default)
+            if (selectionChange != default)
                 listViewBuilder.SetSelectionChange(selectionChange);
-            
-            if(bindItem != default)
+
+            if (bindItem != default)
                 listViewBuilder.SetBindItem(bindItem);
-            
-            if(makeItem != default)
+
+            if (makeItem != default)
                 listViewBuilder.SetMakeItem(makeItem);
-            
-            if(itemSource != default)
+
+            if (itemSource != default)
                 listViewBuilder.SetItemSource(itemSource);
-            
-            if(width != default)
+
+            if (width != default)
                 listViewBuilder.SetWidth(width);
-            
-            if(height != default)
+
+            if (height != default)
                 listViewBuilder.SetHeight(height);
-                
+
             builder?.Invoke(listViewBuilder);
             return listViewBuilder.Build();
         }

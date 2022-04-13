@@ -23,7 +23,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel.Previ
         {
             return "Toggles";
         }
-        
+
         public VisualElement GetPreview()
         {
             VisualElementBuilder root = _uiBuilder.CreateComponentBuilder().CreateVisualElement();

@@ -11,17 +11,17 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
     public class ScrollPresetFactory
     {
         private readonly ComponentBuilder _componentBuilder;
-        
+
         public ScrollPresetFactory(ComponentBuilder componentBuilder)
         {
             _componentBuilder = componentBuilder;
         }
-        
+
         public ScrollView MainScrollView(IEnumerable<VisualElement> children, string name = null, Length height = default, Length width = default, Action<ScrollViewBuilder> builder = default)
         {
             return MainScrollView(name, height, width, builder + (viewBuilder => viewBuilder.AddChildren(children)));
         }
-        
+
         public ScrollView MainScrollView(VisualElement child, string name = null, Length height = default, Length width = default, Action<ScrollViewBuilder> builder = default)
         {
             return MainScrollView(name, height, width, builder + (viewBuilder => viewBuilder.AddChild(child)));
@@ -40,13 +40,13 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
                     scroller.slider.dragElement.AddToClassList(TimberApiStyle.Backgrounds.ScrollButton);
                     scroller.slider.AddToClassList(TimberApiStyle.Backgrounds.ScrollBar);
                 });
-            
-            if(height != default)
+
+            if (height != default)
                 scrollView.SetHeight(height);
-            
-            if(width != default)
+
+            if (width != default)
                 scrollView.SetWidth(height);
-            
+
             builder?.Invoke(scrollView);
             return scrollView.Build();
         }

@@ -15,7 +15,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
         {
             _componentBuilder = componentBuilder;
         }
-        
+
         /// <summary>
         /// Normal: width 20px, height 20px
         /// Small: width 18px, height 18px
@@ -35,7 +35,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         /// <summary>
         /// Normal: width 20px, height 20px
         /// Small: width 18px, height 18px
@@ -54,7 +54,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         /// <summary>
         /// Normal: width 20px, height 20px
         /// Small: width 18px, height 18px
@@ -73,7 +73,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         /// <summary>
         /// Normal: width 20px, height 20px
         /// Small: width 18px, height 18px
@@ -92,7 +92,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         /// <summary>
         /// Normal: width 20px, height 20px
         /// Small: width 18px, height 18px
@@ -111,7 +111,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         /// <summary>
         /// Normal: width 20px, height 20px
         /// Small: width 18px, height 18px
@@ -130,7 +130,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         /// <summary>
         /// Normal: width 20px, height 20px
         /// Small: width 18px, height 18px
@@ -149,7 +149,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         /// <summary>
         /// Normal: width 20px, height 20px
         /// Small: width 18px, height 18px
@@ -168,8 +168,8 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
-        
+
+
         public LocalizableButton Close(string name = null, Length size = default, Action<ButtonBuilder> builder = default)
         {
             ButtonBuilder button = _componentBuilder.CreateButton()
@@ -182,8 +182,8 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
-        
+
+
         public LocalizableButton DownArrow(string name = null, Length size = default, Action<ButtonBuilder> builder = default)
         {
             ButtonBuilder button = _componentBuilder.CreateButton()
@@ -196,7 +196,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         public LocalizableButton LeftArrow(string name = null, Length size = default, Action<ButtonBuilder> builder = default)
         {
             ButtonBuilder button = _componentBuilder.CreateButton()
@@ -209,7 +209,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         public LocalizableButton RightArrow(string name = null, Length size = default, Action<ButtonBuilder> builder = default)
         {
             ButtonBuilder button = _componentBuilder.CreateButton()
@@ -222,7 +222,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         public LocalizableButton UpArrow(string name = null, Length size = default, Action<ButtonBuilder> builder = default)
         {
             ButtonBuilder button = _componentBuilder.CreateButton()
@@ -235,7 +235,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         /// <summary>
         /// Normal: width 20px, height 20px
         /// Small: width 18px, height 18px
@@ -254,7 +254,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         /// <summary>
         /// Normal: width 20px, height 20px
         /// Small: width 18px, height 18px
@@ -273,7 +273,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         public LocalizableButton Plus(string name = null, Length size = default, Action<ButtonBuilder> builder = default)
         {
             ButtonBuilder button = _componentBuilder.CreateButton()
@@ -287,7 +287,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         /// <summary>
         /// Normal: width 20px, height 20px
         /// Small: width 18px, height 18px
@@ -306,8 +306,8 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
-        
+
+
         public LocalizableButton CyclerLeft(string name = null, Length size = default, Action<ButtonBuilder> builder = default)
         {
             ButtonBuilder button = _componentBuilder.CreateButton()
@@ -320,7 +320,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         public LocalizableButton CyclerRight(string name = null, Length size = default, Action<ButtonBuilder> builder = default)
         {
             ButtonBuilder button = _componentBuilder.CreateButton()
@@ -333,7 +333,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         public LocalizableButton CyclerLeftMain(string name = null, Length size = default, Action<ButtonBuilder> builder = default)
         {
             ButtonBuilder button = _componentBuilder.CreateButton()
@@ -346,7 +346,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         public LocalizableButton CyclerRightMain(string name = null, Length size = default, Action<ButtonBuilder> builder = default)
         {
             ButtonBuilder button = _componentBuilder.CreateButton()
@@ -359,7 +359,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         public LocalizableButton SliderHolder(string name = null, Length size = default, Action<ButtonBuilder> builder = default)
         {
             ButtonBuilder button = _componentBuilder.CreateButton()
@@ -372,7 +372,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         public LocalizableButton CircleEmpty(string name = null, Length size = default, Action<ButtonBuilder> builder = default)
         {
             ButtonBuilder button = _componentBuilder.CreateButton()
@@ -386,7 +386,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         /// <summary>
         /// Normal: width 20px, height 20px
         /// Small: width 18px, height 18px
@@ -405,7 +405,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         public LocalizableButton SpeedButton0(string name = null, Length size = default, Action<ButtonBuilder> builder = default)
         {
             ButtonBuilder button = _componentBuilder.CreateButton()
@@ -419,7 +419,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         public LocalizableButton SpeedButton1(string name = null, Length size = default, Action<ButtonBuilder> builder = default)
         {
             ButtonBuilder button = _componentBuilder.CreateButton()
@@ -433,7 +433,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         public LocalizableButton SpeedButton2(string name = null, Length size = default, Action<ButtonBuilder> builder = default)
         {
             ButtonBuilder button = _componentBuilder.CreateButton()
@@ -447,7 +447,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         public LocalizableButton SpeedButton3(string name = null, Length size = default, Action<ButtonBuilder> builder = default)
         {
             ButtonBuilder button = _componentBuilder.CreateButton()
@@ -461,7 +461,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         public LocalizableButton BugTracker(string name = null, Length size = default, Action<ButtonBuilder> builder = default)
         {
             ButtonBuilder button = _componentBuilder.CreateButton()
@@ -475,7 +475,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         public LocalizableButton ClampDown(string name = null, Length size = default, Action<ButtonBuilder> builder = default)
         {
             ButtonBuilder button = _componentBuilder.CreateButton()
@@ -489,7 +489,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         public LocalizableButton ClampUp(string name = null, Length size = default, Action<ButtonBuilder> builder = default)
         {
             ButtonBuilder button = _componentBuilder.CreateButton()
@@ -503,7 +503,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         public LocalizableButton LevelVisibilityReset(string name = null, Length size = default, Action<ButtonBuilder> builder = default)
         {
             ButtonBuilder button = _componentBuilder.CreateButton()
@@ -530,7 +530,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
                 .SetName(name)
                 .SetLocKey(locKey)
                 .SetText(text)
-                .SetColor(color == default ? new StyleColor(new Color(1,1,1,1)) : color)
+                .SetColor(color == default ? new StyleColor(new Color(1, 1, 1, 1)) : color)
                 .SetFontSize(fontSize == default ? new Length(14, Pixel) : fontSize)
                 .SetFontStyle(fontStyle == default ? FontStyle.Bold : fontStyle)
                 .SetHeight(height == default ? new Length(44, Pixel) : height)
@@ -538,7 +538,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         public LocalizableButton ButtonGame(string locKey = null, Length width = default, Length height = default, Length fontSize = default, FontStyle fontStyle = default, StyleColor color = default, string scale = default, string name = null, string text = null, Action<ButtonBuilder> builder = default)
         {
             ButtonBuilder button = _componentBuilder.CreateButton()
@@ -549,7 +549,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
                 .SetName(name)
                 .SetLocKey(locKey)
                 .SetText(text)
-                .SetColor(color == default ? new StyleColor(new Color(1,1,1,1)) : color)
+                .SetColor(color == default ? new StyleColor(new Color(1, 1, 1, 1)) : color)
                 .SetFontSize(fontSize == default ? new Length(13, Pixel) : fontSize)
                 .SetFontStyle(fontStyle == default ? FontStyle.Bold : fontStyle)
                 .SetHeight(height == default ? new Length(33, Pixel) : height)
@@ -557,7 +557,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         public LocalizableButton NewGameCustom(string locKey = null, Length width = default, Length height = default, Length fontSize = default, FontStyle fontStyle = default, StyleColor color = default, string scale = default, string name = null, string text = null, Action<ButtonBuilder> builder = default)
         {
             ButtonBuilder button = _componentBuilder.CreateButton()
@@ -568,7 +568,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
                 .SetName(name)
                 .SetLocKey(locKey)
                 .SetText(text)
-                .SetColor(color == default ? new StyleColor(new Color(1,1,1,1)) : color)
+                .SetColor(color == default ? new StyleColor(new Color(1, 1, 1, 1)) : color)
                 .SetFontSize(fontSize == default ? new Length(13, Pixel) : fontSize)
                 .SetFontStyle(fontStyle == default ? FontStyle.Bold : fontStyle)
                 .SetHeight(height == default ? new Length(80, Pixel) : height)
@@ -576,7 +576,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         public LocalizableButton NewGameEasy(string locKey = null, Length width = default, Length height = default, Length fontSize = default, FontStyle fontStyle = default, StyleColor color = default, string scale = default, string name = null, string text = null, Action<ButtonBuilder> builder = default)
         {
             ButtonBuilder button = _componentBuilder.CreateButton()
@@ -587,7 +587,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
                 .SetName(name)
                 .SetLocKey(locKey)
                 .SetText(text)
-                .SetColor(color == default ? new StyleColor(new Color(1,1,1,1)) : color)
+                .SetColor(color == default ? new StyleColor(new Color(1, 1, 1, 1)) : color)
                 .SetFontSize(fontSize == default ? new Length(13, Pixel) : fontSize)
                 .SetFontStyle(fontStyle == default ? FontStyle.Bold : fontStyle)
                 .SetHeight(height == default ? new Length(80, Pixel) : height)
@@ -595,7 +595,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         public LocalizableButton NewGameNormal(string locKey = null, Length width = default, Length height = default, Length fontSize = default, FontStyle fontStyle = default, StyleColor color = default, string scale = default, string name = null, string text = null, Action<ButtonBuilder> builder = default)
         {
             ButtonBuilder button = _componentBuilder.CreateButton()
@@ -606,7 +606,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
                 .SetName(name)
                 .SetLocKey(locKey)
                 .SetText(text)
-                .SetColor(color == default ? new StyleColor(new Color(1,1,1,1)) : color)
+                .SetColor(color == default ? new StyleColor(new Color(1, 1, 1, 1)) : color)
                 .SetFontSize(fontSize == default ? new Length(13, Pixel) : fontSize)
                 .SetFontStyle(fontStyle == default ? FontStyle.Bold : fontStyle)
                 .SetHeight(height == default ? new Length(80, Pixel) : height)
@@ -614,7 +614,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(button);
             return button.Build();
         }
-        
+
         public LocalizableButton NewGameHard(string locKey = null, Length width = default, Length height = default, Length fontSize = default, FontStyle fontStyle = default, StyleColor color = default, string scale = default, string name = null, string text = null, Action<ButtonBuilder> builder = default)
         {
             ButtonBuilder button = _componentBuilder.CreateButton()
@@ -625,7 +625,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
                 .SetName(name)
                 .SetLocKey(locKey)
                 .SetText(text)
-                .SetColor(color == default ? new StyleColor(new Color(1,1,1,1)) : color)
+                .SetColor(color == default ? new StyleColor(new Color(1, 1, 1, 1)) : color)
                 .SetFontSize(fontSize == default ? new Length(13, Pixel) : fontSize)
                 .SetFontStyle(fontStyle == default ? FontStyle.Bold : fontStyle)
                 .SetHeight(height == default ? new Length(80, Pixel) : height)

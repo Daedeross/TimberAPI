@@ -24,7 +24,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel.Previ
         {
             return "Sliders";
         }
-        
+
         public VisualElement GetPreview()
         {
             VisualElementBuilder rootBuilder = _uiBuilder.CreateComponentBuilder().CreateVisualElement();
@@ -33,7 +33,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel.Previ
             rootBuilder.AddPreset(factory => factory.Sliders().SliderIntDiamond(1, 10));
             rootBuilder.AddPreset(factory => factory.Sliders().SliderCircle(1, 100));
             rootBuilder.AddPreset(factory => factory.Sliders().SliderIntCircle(1, 10));
-            
+
 
             rootBuilder.AddPreset(factory => factory.Labels().DefaultHeader("preview.sliders.floatslider", builder: builder => builder.SetStyle(style => { style.alignSelf = Align.Center; style.marginBottom = new Length(10, Pixel); })));
             rootBuilder.AddPreset(factory => factory.Labels().DefaultBold("preview.sliders.normal"));
@@ -49,10 +49,10 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel.Previ
             rootBuilder.AddPreset(factory => factory.Labels().DefaultBold("preview.sliders.progress"));
             rootBuilder.AddComponent(builder => builder
                 .SetName("controlledSlider")
-                .AddPreset(factory => factory.Sliders().SliderDiamond(1, 10, name: "Slider",builder: sliderBuilder => sliderBuilder.SetStyle(style => style.flexGrow = 1f)))
+                .AddPreset(factory => factory.Sliders().SliderDiamond(1, 10, name: "Slider", builder: sliderBuilder => sliderBuilder.SetStyle(style => style.flexGrow = 1f)))
                 .AddPreset(factory => factory.Labels().DefaultText(name: "Value", text: "1.00", builder: labelBuilder => labelBuilder.SetMargin(new Margin(new Length(8, Pixel), 0))))
                 .SetFlexDirection(FlexDirection.Row));
-            
+
             rootBuilder.AddPreset(factory => factory.Labels().DefaultHeader("preview.sliders.intslider", builder: builder => builder.SetStyle(style => { style.alignSelf = Align.Center; style.marginBottom = new Length(10, Pixel); })));
             rootBuilder.AddPreset(factory => factory.Labels().DefaultBold("preview.sliders.normal"));
             rootBuilder.AddPreset(factory => factory.Sliders().SliderIntDiamond(1, 25));
@@ -67,7 +67,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel.Previ
             rootBuilder.AddPreset(factory => factory.Labels().DefaultBold("preview.sliders.progress"));
             rootBuilder.AddComponent(builder => builder
                 .SetName("controlledSliderInt")
-                .AddPreset(factory => factory.Sliders().SliderIntDiamond(1, 10, name: "Slider",builder: sliderBuilder => sliderBuilder.SetStyle(style => style.flexGrow = 1f)))
+                .AddPreset(factory => factory.Sliders().SliderIntDiamond(1, 10, name: "Slider", builder: sliderBuilder => sliderBuilder.SetStyle(style => style.flexGrow = 1f)))
                 .AddPreset(factory => factory.Labels().DefaultText(name: "Value", text: "1", builder: labelBuilder => labelBuilder.SetMargin(new Margin(new Length(8, Pixel), 0))))
                 .SetFlexDirection(FlexDirection.Row));
 
@@ -76,31 +76,31 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel.Previ
             InitializeSliderInt(root, "controlledSliderInt");
             return root;
         }
-        
+
         private void InitializeSlider(
             VisualElement root,
             string name)
         {
-            VisualElement e = root.Q<VisualElement>(name, (string) null);
-            Slider control = e.Q<Slider>("Slider", (string) null);
-            Label valueLabel = e.Q<Label>("Value", (string) null);
-            control.RegisterValueChangedCallback (v =>
-            {
-                valueLabel.text = v.newValue.ToString("N");
-            });
+            VisualElement e = root.Q<VisualElement>(name, (string)null);
+            Slider control = e.Q<Slider>("Slider", (string)null);
+            Label valueLabel = e.Q<Label>("Value", (string)null);
+            control.RegisterValueChangedCallback(v =>
+           {
+               valueLabel.text = v.newValue.ToString("N");
+           });
         }
-        
+
         private void InitializeSliderInt(
             VisualElement root,
             string name)
         {
-            VisualElement e = root.Q<VisualElement>(name, (string) null);
-            SliderInt control = e.Q<SliderInt>("Slider", (string) null);
-            Label valueLabel = e.Q<Label>("Value", (string) null);
-            control.RegisterValueChangedCallback (v =>
-            {
-                valueLabel.text = v.newValue.ToString("0");
-            });
+            VisualElement e = root.Q<VisualElement>(name, (string)null);
+            SliderInt control = e.Q<SliderInt>("Slider", (string)null);
+            Label valueLabel = e.Q<Label>("Value", (string)null);
+            control.RegisterValueChangedCallback(v =>
+           {
+               valueLabel.text = v.newValue.ToString("0");
+           });
         }
     }
 }

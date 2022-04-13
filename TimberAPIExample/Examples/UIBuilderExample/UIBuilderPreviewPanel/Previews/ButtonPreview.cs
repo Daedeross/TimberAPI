@@ -24,7 +24,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel.Previ
         {
             return "Buttons";
         }
-        
+
         public VisualElement GetPreview()
         {
             VisualElementBuilder root = _uiBuilder.CreateComponentBuilder().CreateVisualElement();
@@ -47,7 +47,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel.Previ
                 builder.AddPreset(factory => factory.Buttons().SliderHolder());
                 builder.AddPreset(factory => factory.Buttons().ResetButton());
             });
-            
+
             root.AddPreset(factory => factory.Labels().DefaultHeader("preview.buttons.arrows", builder: builder => builder.SetStyle(style => { style.alignSelf = Align.Center; style.marginBottom = new Length(10, Pixel); })));
             root.AddComponent(builder =>
             {
@@ -65,7 +65,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel.Previ
                 builder.AddPreset(factory => factory.Buttons().LeftArrow());
                 builder.AddPreset(factory => factory.Buttons().RightArrow());
             });
-            
+
             root.AddPreset(factory => factory.Labels().DefaultHeader("preview.buttons.cycler", builder: builder => builder.SetStyle(style => { style.alignSelf = Align.Center; style.marginBottom = new Length(10, Pixel); })));
             root.AddComponent(builder =>
             {
@@ -75,7 +75,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel.Previ
                 builder.AddPreset(factory => factory.Buttons().CyclerLeftMain());
                 builder.AddPreset(factory => factory.Buttons().CyclerRightMain());
             });
-            
+
             root.AddPreset(factory => factory.Labels().DefaultHeader("preview.buttons.speedcontrol", builder: builder => builder.SetStyle(style => { style.alignSelf = Align.Center; style.marginBottom = new Length(10, Pixel); })));
             root.AddComponent(builder =>
             {
@@ -88,7 +88,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel.Previ
 
             root.AddPreset(factory => factory.Labels().DefaultHeader("preview.buttons.ninesliced", builder: builder => builder.SetStyle(style => { style.alignSelf = Align.Center; })));
             root.AddPreset(factory => factory.Labels().GameTextSmall("preview.buttons.ninesliced.comment", builder: builder => builder.SetStyle(style => { style.alignSelf = Align.Center; style.marginBottom = new Length(10, Pixel); })));
-            
+
             FieldInfo[] scales = typeof(TimberApiStyle.Scales).GetFields(BindingFlags.Static | BindingFlags.Public);
 
             foreach (FieldInfo scale in scales)
@@ -105,7 +105,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel.Previ
                 });
             }
 
-            
+
             return root.Build();
         }
     }

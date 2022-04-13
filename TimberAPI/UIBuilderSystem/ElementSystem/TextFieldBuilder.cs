@@ -14,9 +14,9 @@ namespace TimberbornAPI.UIBuilderSystem.ElementSystem
             UiPresetFactory uiPresetFactory)
             : base(new NineSliceTextField(), visualElementInitializer, assetLoader, uiPresetFactory)
         {
-            
+
         }
-        
+
         public TextFieldBuilder SetMultiLine(bool isMultiLine)
         {
             Root.multiline = isMultiLine;

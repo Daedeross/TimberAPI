@@ -15,7 +15,7 @@ namespace TimberbornAPI.EntityActionSystem
         {
             _entityActions = entityActions.ToImmutableArray();
         }
-        
+
         [HarmonyPatch(typeof(EntityService), "Instantiate", typeof(GameObject), typeof(Guid))]
         public static class EntityServicePatchGameObjectInitializers
         {

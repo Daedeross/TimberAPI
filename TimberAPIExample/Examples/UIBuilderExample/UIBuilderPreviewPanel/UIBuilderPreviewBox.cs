@@ -14,11 +14,11 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel
     public class UIBuilderPreviewBox : IPanelController
     {
         public static Action OpenPreviewBoxDelegate;
-        
+
         private readonly PanelStack _panelStack;
 
         private static ImmutableArray<IUIBuilderPreview> _previews;
-        
+
         private readonly UIBuilder _uiBuilder;
 
         private VisualElement _previewBox;
@@ -32,7 +32,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel
         }
 
         private void OpenPreviewBox()
-        { 
+        {
             _panelStack.HideAndPush(this);
         }
 
@@ -46,12 +46,12 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel
                     builder.SetMargin(new Margin(0, 0, 0, new Length(-300, Pixel)));
                     builder.SetStyle(style => style.position = Position.Absolute);
                 });
-            
+
             foreach (IUIBuilderPreview preview in _previews)
             {
                 menu.AddPreset(factory => factory.Buttons().Button(text: preview.GetPreviewName(), name: preview.GetPreviewKey(), builder: builder => builder.SetWidth(new Length(100, Percent))));
             }
-            
+
             UIBoxBuilder boxBuilder = _uiBuilder.CreateBoxBuilder()
                 .SetHeight(new Length(650, Pixel))
                 .SetWidth(new Length(850, Pixel))
@@ -59,20 +59,20 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel
                 .ModifyScrollView(builder => builder.SetName("elementPreview"));
 
             IUIBuilderPreview firstElement = _previews.FirstOrDefault();
-            if(firstElement != null)
+            if (firstElement != null)
                 boxBuilder.AddComponent(firstElement.GetPreview());
-            
+
             VisualElement root = boxBuilder.AddCloseButton("CloseButton").SetBoxInCenter().AddHeader("preview.box.title").BuildAndInitialize();
             _previewBox = root.Q<VisualElement>("elementPreview");
             root.Q<Button>("CloseButton").clicked += OnUICancelled;
-            
+
             foreach (IUIBuilderPreview uiBuilderPreview in _previews)
             {
                 root.Q<Button>(uiBuilderPreview.GetPreviewKey()).clicked += delegate { SwitchPreview(uiBuilderPreview); };
             }
             return root;
         }
-        
+
         private void SwitchPreview(IUIBuilderPreview selectedPreview)
         {
             _previewBox.Clear();

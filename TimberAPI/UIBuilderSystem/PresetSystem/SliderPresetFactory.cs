@@ -15,7 +15,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
         {
             _componentBuilder = componentBuilder;
         }
-        
+
         public LocalizableSliderInt SliderIntCircle(int lowValue, int highValue, int value = default, string locKey = default,
             Length width = default, string text = default, string name = default,
             Action<SliderIntBuilder> builder = default)
@@ -51,7 +51,7 @@ namespace TimberbornAPI.UIBuilderSystem.PresetSystem
             builder?.Invoke(slider);
             return slider.Build();
         }
-        
+
         public LocalizableSlider SliderCircle(float lowValue, float highValue, float value = default, string locKey = default,
             Length width = default, string text = default, string name = default,
             Action<SliderBuilder> builder = default)

@@ -12,9 +12,9 @@ namespace TimberbornAPI.UIBuilderSystem
     public class UIBoxBuilder
     {
         private readonly IResourceAssetLoader _resourceAssetLoader;
-        
+
         private readonly VisualElementBuilder _centerWrapper;
-        
+
         private readonly VisualElementBuilder _wrapper;
 
         private readonly VisualElementBuilder _box;
@@ -73,7 +73,7 @@ namespace TimberbornAPI.UIBuilderSystem
             _scrollView.AddPreset(presetFactory);
             return this;
         }
-        
+
         public UIBoxBuilder AddCloseButton(string name = null)
         {
             _box.AddPreset(factory => factory.Buttons().Close(name, builder: builder => builder.SetStyle(style =>
@@ -84,7 +84,7 @@ namespace TimberbornAPI.UIBuilderSystem
             })));
             return this;
         }
-        
+
         public UIBoxBuilder AddHeader(string locKey = default, string text = default, string name = null)
         {
             _box.AddComponent(builder => builder.SetStyle(style =>
@@ -102,7 +102,7 @@ namespace TimberbornAPI.UIBuilderSystem
                 .AddPreset(factory => factory.Labels().Label(locKey, new Length(18, Pixel), Color.white, text: text, name: name)));
             return this;
         }
-        
+
         public UIBoxBuilder ModifyCenterWrapper(Action<VisualElementBuilder> builder)
         {
             builder.Invoke(_centerWrapper);

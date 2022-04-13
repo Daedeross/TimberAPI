@@ -57,7 +57,7 @@ namespace TimberbornAPI.EntityLinkerSystem
                 {
                     return;
                 }
-                List<EntityLink> linkerLinks = links.Where(x => x.Linker == this).ToList(); 
+                List<EntityLink> linkerLinks = links.Where(x => x.Linker == this).ToList();
                 foreach (EntityLink link in linkerLinks)
                 {
                     AddLinkInLinkee(link);
@@ -85,7 +85,7 @@ namespace TimberbornAPI.EntityLinkerSystem
         /// <param name="linkee"></param>
         public virtual void CreateLink(EntityLinker linkee)
         {
-            if(linkee == this)
+            if (linkee == this)
             {
                 Log.LogWarning($"Tried to link entity with itself. Stopped linking.");
                 return;
@@ -153,7 +153,7 @@ namespace TimberbornAPI.EntityLinkerSystem
         {
             foreach (EntityLink link in EntityLinks)
             {
-                if(link.Linker == this)
+                if (link.Linker == this)
                 {
                     link.Linkee.RemoveLink(link);
                 }

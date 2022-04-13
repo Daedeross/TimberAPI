@@ -4,8 +4,8 @@ using HarmonyLib;
 namespace TimberbornAPI.ContainerSystem
 {
     [HarmonyPatch(
-        typeof(Container), 
-        MethodType.Constructor,         
+        typeof(Container),
+        MethodType.Constructor,
         typeof(IInstanceBank),
         typeof(IValidatingMethodInjector),
         typeof(IBoundInstanceService),

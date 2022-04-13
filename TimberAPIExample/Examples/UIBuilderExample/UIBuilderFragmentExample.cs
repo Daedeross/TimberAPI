@@ -26,25 +26,25 @@ namespace TimberAPIExample.Examples.UIBuilderExample
             _root = _builder.CreateComponentBuilder().CreateVisualElement()
                 // Create a fragment with the default background and scaling.
                 .AddComponent(_builder.CreateFragmentBuilder()
-                    .AddPreset(factory => factory.Toggles().CheckmarkInverted( "firstToggle", locKey: "fragment.example.button1", builder: builder => builder.SetMargin(new Margin(0,0,new Length(3, Pixel),0))))
-                    .AddPreset(factory => factory.Toggles().CheckmarkInverted( "secondToggle", locKey: "fragment.example.button2"))
+                    .AddPreset(factory => factory.Toggles().CheckmarkInverted("firstToggle", locKey: "fragment.example.button1", builder: builder => builder.SetMargin(new Margin(0, 0, new Length(3, Pixel), 0))))
+                    .AddPreset(factory => factory.Toggles().CheckmarkInverted("secondToggle", locKey: "fragment.example.button2"))
                     .Build())
                 // Create a fragment with the default scaling and other background.
                 .AddComponent(_builder.CreateFragmentBuilder()
                     .SetBackground(TimberApiStyle.Backgrounds.Bg1)
-                    .AddPreset(factory => factory.Toggles().CheckmarkInverted( locKey: "fragment.example.button1", builder: builder => builder.SetMargin(new Margin(0,0,new Length(3, Pixel),0))))
-                    .AddPreset(factory => factory.Toggles().CheckmarkInverted( locKey: "fragment.example.button2"))
+                    .AddPreset(factory => factory.Toggles().CheckmarkInverted(locKey: "fragment.example.button1", builder: builder => builder.SetMargin(new Margin(0, 0, new Length(3, Pixel), 0))))
+                    .AddPreset(factory => factory.Toggles().CheckmarkInverted(locKey: "fragment.example.button2"))
                     .Build())
                 // Create a fragment with the different background and scaling
                 .AddComponent(_builder.CreateFragmentBuilder()
                     .SetBackground(TimberApiStyle.Backgrounds.Bg7)
                     .SetScale(TimberApiStyle.Scales.Scale7)
-                    .AddPreset(factory => factory.Toggles().CheckmarkInverted( locKey: "fragment.example.button1", builder: builder => builder.SetMargin(new Margin(0,0,new Length(3, Pixel),0))))
-                    .AddPreset(factory => factory.Toggles().CheckmarkInverted( locKey: "fragment.example.button2"))
+                    .AddPreset(factory => factory.Toggles().CheckmarkInverted(locKey: "fragment.example.button1", builder: builder => builder.SetMargin(new Margin(0, 0, new Length(3, Pixel), 0))))
+                    .AddPreset(factory => factory.Toggles().CheckmarkInverted(locKey: "fragment.example.button2"))
                     .Build())
                 // Builds the element and initializes them, adding sounds effects etc.
                 .BuildAndInitialize();
-            
+
             // This is enough for one fragment, the example previews 3 fragments in one.
             // _root = _builder.CreateFragmentBuilder()
             //     .AddPreset(factory => factory.Toggles().Checkmark( "firstButton", locKey: "fragment.example.button1"))
@@ -60,7 +60,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample
 
         public void ShowFragment(GameObject entity)
         {
-            
+
         }
 
         public void ClearFragment()

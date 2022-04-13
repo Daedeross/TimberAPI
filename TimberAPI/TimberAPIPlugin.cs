@@ -24,9 +24,9 @@ namespace TimberbornAPI.Internal
             new Harmony("com.timberapi.plugin").PatchAll();
 
             InstallConfigurators();
-            
+
             TimberAPI.AssetRegistry.AddSceneAssets("timberApi", SceneEntryPoint.Global);
-            
+
             Log.LogInfo("TimberAPI is loaded!");
         }
 
@@ -37,10 +37,11 @@ namespace TimberbornAPI.Internal
         {
             TimberAPI.DependencyRegistry.AddConfiguratorBeforeLoad(new AssetConfigurator(), SceneEntryPoint.Global);
             TimberAPI.DependencyRegistry.AddConfigurator(new UIBuilderConfigurator(), SceneEntryPoint.Global);
-            
+
             TimberAPI.DependencyRegistry.AddConfigurator(new EntityActionConfigurator(), SceneEntryPoint.MapEditor);
 
-            TimberAPI.DependencyRegistry.AddConfigurators(new() {
+            TimberAPI.DependencyRegistry.AddConfigurators(new()
+            {
                 new EntityActionConfigurator(),
                 new EntityLinkerConfigurator(),
                 new ObjectCollectionSystemConfigurator()

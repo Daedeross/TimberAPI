@@ -26,7 +26,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel
             containerDefinition.MultiBind<IUIBuilderPreview>().To<TextFieldPreview>().AsSingleton();
         }
     }
-    
+
     [HarmonyPatch(typeof(OptionsBox), "GetPanel")]
     public static class InGameMenuPanelPatch
     {
@@ -40,7 +40,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel
             root.Insert(6, button);
         }
     }
-    
+
     [HarmonyPatch(typeof(MainMenuPanel), "GetPanel")]
     public static class MainMenuPanelPatch
     {

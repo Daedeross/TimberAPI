@@ -8,7 +8,7 @@ namespace TimberAPIExample.Examples.EntityActionExample
     public class BinditoInjectComponentExample : MonoBehaviour
     {
         private ILoc _loc;
-        
+
         [Inject]
         public void InjectDependencies(ILoc loc)
         {

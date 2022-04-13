@@ -34,7 +34,7 @@ namespace TimberbornAPI.UIBuilderSystem.CustomElements
 
         public void Localize(ILoc loc)
         {
-            if(_textLocKey == null)
+            if (_textLocKey == null)
                 return;
             text = loc.T(_textLocKey);
         }

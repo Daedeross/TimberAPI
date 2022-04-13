@@ -9,7 +9,7 @@ namespace TimberbornAPI.ContainerSystem
         /// Holds the current active DI container
         /// </summary>
         internal static Bindito.Core.IContainer Container;
-        
+
         public T GetInstance<T>()
         {
             return Container.GetInstance<T>();
@@ -19,7 +19,7 @@ namespace TimberbornAPI.ContainerSystem
         {
             return Container.GetInstance(type);
         }
-        
+
         public IEnumerable<object> GetBoundInstances()
         {
             return Container.GetBoundInstances();

@@ -29,7 +29,7 @@ namespace TimberbornAPI.DependencySystem
 
         public void AddConfigurators(List<IConfigurator> configurators, SceneEntryPoint entryPoint = SceneEntryPoint.InGame)
         {
-            foreach(IConfigurator configurator in configurators)
+            foreach (IConfigurator configurator in configurators)
             {
                 AddConfigurator(configurator, entryPoint);
             }

@@ -20,10 +20,10 @@ namespace TimberAPIExample.Examples.EntityActionExample
             // Return if object isn't a district
             if (entity.GetComponent<DistrictCenter>() == null)
                 return;
-            
+
             // Add a new Monobehavior component
             entity.AddComponent<ExampleMonoBehaviourComponent>();
-            
+
             // Adds a component that can inject dependency injection classes
             _instantiator.AddComponent<BinditoInjectComponentExample>(entity);
         }

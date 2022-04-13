@@ -19,7 +19,7 @@ namespace TimberbornAPI.UIBuilderSystem.ElementSystem
             UiPresetFactory uiPresetFactory)
             : base(new ListView(), visualElementInitializer, assetLoader, uiPresetFactory)
         {
-            
+
         }
 
         [SuppressMessage("Member Access", "Publicizer001:Accessing a member that was not originally public")]
@@ -41,25 +41,25 @@ namespace TimberbornAPI.UIBuilderSystem.ElementSystem
             Root.makeItem = visualElement;
             return this;
         }
-        
+
         public ListViewBuilder SetItemSource(IList itemSource)
         {
             Root.itemsSource = itemSource;
             return this;
         }
-        
+
         public ListViewBuilder SetBindItem(Action<VisualElement, int> bindItem)
         {
             Root.bindItem = bindItem;
             return this;
         }
-        
+
         public ListViewBuilder SetSelectionChange(Action<IEnumerable<object>> selectionChange)
         {
             Root.onSelectionChange += selectionChange;
             return this;
         }
-        
+
         public ListViewBuilder SetSelectionType(SelectionType selectionType)
         {
             Root.selectionType = selectionType;

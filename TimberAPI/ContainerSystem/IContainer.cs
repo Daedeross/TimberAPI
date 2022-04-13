@@ -8,7 +8,7 @@ namespace TimberbornAPI.ContainerSystem
         public T GetInstance<T>();
 
         public object GetInstance(Type type);
-        
+
         public IEnumerable<object> GetBoundInstances();
     }
 }

@@ -19,7 +19,7 @@ namespace TimberbornAPI.UIBuilderSystem.CustomElements
 
         public void Localize(ILoc loc)
         {
-            if(_textLocKey == null)
+            if (_textLocKey == null)
                 return;
             label = loc.T(_textLocKey);
         }

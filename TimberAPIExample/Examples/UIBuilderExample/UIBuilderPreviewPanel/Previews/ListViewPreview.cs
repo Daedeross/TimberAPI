@@ -26,16 +26,16 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel.Previ
 
             public StyleColor Color { get; set; }
         }
-        
+
         private readonly UIBuilder _uiBuilder;
-        
+
         /// <summary>
         /// Example item list with custom object
         /// </summary>
-        private static readonly List<CustomSourceExample> _list = new ()
+        private static readonly List<CustomSourceExample> _list = new()
         {
-            new CustomSourceExample("Example Item 1", Color.blue), 
-            new CustomSourceExample("Example Item 2", Color.cyan), 
+            new CustomSourceExample("Example Item 1", Color.blue),
+            new CustomSourceExample("Example Item 2", Color.cyan),
             new CustomSourceExample("Example Item 3", Color.gray),
             new CustomSourceExample("Example Item 4", Color.green),
             new CustomSourceExample("Example Item 5", Color.magenta),
@@ -58,7 +58,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel.Previ
         {
             return "Listviews";
         }
-        
+
         public VisualElement GetPreview()
         {
             VisualElementBuilder root = _uiBuilder.CreateComponentBuilder().CreateVisualElement();
@@ -68,7 +68,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel.Previ
                 BindItemExample, // Change the visualElement with item specific details (example: text)
                 ExampleOnSelectionChange, // Trigger when selection has changed
                 height: new Length(200, Pixel)));
-      
+
             root.AddPreset(factory => factory.Labels().DefaultHeader("preview.listview.multi", builder: builder => builder.SetStyle(style => { style.alignSelf = Align.Center; style.marginBottom = new Length(10, Pixel); })));
             root.AddPreset(factory => factory.ListViews().MainMenuListView(_list, BindItemExample, ExampleOnSelectionChange, SelectionType.Multiple, height: new Length(200, Pixel)));
 
@@ -97,7 +97,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel.Previ
                         new Color(0.47f, 0.88f, 0.37f),
                         height: new Length(200, Pixel)))
                 .Build());
-            
+
             root.AddPreset(factory => factory.Labels().DefaultHeader("preview.listview.custom", builder: builder => builder.SetStyle(style => { style.alignSelf = Align.Center; style.marginBottom = new Length(10, Pixel); })));
             root.AddPreset(factory => factory.ListViews().CustomListView(_list,
                 ItemExampleElement,
@@ -117,29 +117,29 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel.Previ
                     dragElement.style.width = new Length(26, Pixel);
                 },
                 height: new Length(200, Pixel)));
-            
+
             return root.Build();
         }
-        
+
         private void BindItemExample(VisualElement visualElement, int i)
         {
             CustomSourceExample item = _list[i];
             visualElement.Q<Label>("ItemLabel").text = item.Text;
             visualElement.Q<Label>("ItemLabel").style.color = item.Color;
         }
-        
+
         private void ExampleOnSelectionChange(IEnumerable<object> selectedItemObjects)
         {
             foreach (object itemObject in selectedItemObjects)
             {
-                if (itemObject is not CustomSourceExample item) 
+                if (itemObject is not CustomSourceExample item)
                     return;
-            
+
                 Log.LogInfo(item.Text);
             }
 
         }
-        
+
         private VisualElement ItemExampleElement()
         {
             VisualElement item = _uiBuilder.CreateComponentBuilder().CreateVisualElement()

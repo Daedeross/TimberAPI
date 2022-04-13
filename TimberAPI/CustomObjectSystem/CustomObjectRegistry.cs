@@ -6,18 +6,18 @@ namespace TimberbornAPI.CustomObjectSystem
 {
     public class CustomObjectRegistry : ICustomObjectRegistry
     {
-		private readonly List<GameObject> CustomObjects = new();
+        private readonly List<GameObject> CustomObjects = new();
         private bool Accessed = false;
 
-		public void AddGameObject(GameObject gameObject)
-		{
+        public void AddGameObject(GameObject gameObject)
+        {
             if (Accessed)
             {
                 Log.LogInfo("The CustomObjectRegistry has already been loaded by the game." +
                     "You probably need to call AddGameObject() earlier.");
             }
-			CustomObjects.Add(gameObject);
-		}
+            CustomObjects.Add(gameObject);
+        }
 
         public List<GameObject> GetAllGameObjects()
         {

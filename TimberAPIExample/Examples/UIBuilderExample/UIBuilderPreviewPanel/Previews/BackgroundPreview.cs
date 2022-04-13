@@ -59,7 +59,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel.Previ
 
                 root.AddComponent(scaleSection.Build());
             }
-            
+
             return root.Build();
         }
     }

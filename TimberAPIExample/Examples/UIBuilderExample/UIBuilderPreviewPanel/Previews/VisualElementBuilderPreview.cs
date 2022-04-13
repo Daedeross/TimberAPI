@@ -23,7 +23,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel.Previ
         {
             return "VisualElements";
         }
-        
+
         public VisualElement GetPreview()
         {
             VisualElementBuilder root = _uiBuilder.CreateComponentBuilder().CreateVisualElement();
@@ -38,7 +38,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel.Previ
                 builder.AddPreset(factory => factory.Buttons().Button(text: "4"));
                 builder.AddPreset(factory => factory.Buttons().Button(text: "5"));
             });
-            
+
             root.AddPreset(factory => factory.Labels().DefaultHeader("preview.visualelements.wrap.wrapreverse", builder: builder => builder.SetStyle(style => { style.alignSelf = Align.Center; style.marginBottom = new Length(10, Pixel); })));
             root.AddComponent(builder =>
             {
@@ -49,7 +49,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel.Previ
                 builder.AddPreset(factory => factory.Buttons().Button(text: "4"));
                 builder.AddPreset(factory => factory.Buttons().Button(text: "5"));
             });
-            
+
             root.AddPreset(factory => factory.Labels().DefaultHeader("preview.visualelements.justify.start", builder: builder => builder.SetStyle(style => { style.alignSelf = Align.Center; style.marginBottom = new Length(10, Pixel); })));
             root.AddComponent(builder =>
             {
@@ -57,7 +57,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel.Previ
                 builder.AddPreset(factory => factory.Buttons().Button(text: "1"));
                 builder.AddPreset(factory => factory.Buttons().Button(text: "2"));
             });
-            
+
             root.AddPreset(factory => factory.Labels().DefaultHeader("preview.visualelements.justify.center", builder: builder => builder.SetStyle(style => { style.alignSelf = Align.Center; style.marginBottom = new Length(10, Pixel); })));
             root.AddComponent(builder =>
             {
@@ -65,7 +65,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel.Previ
                 builder.AddPreset(factory => factory.Buttons().Button(text: "1"));
                 builder.AddPreset(factory => factory.Buttons().Button(text: "2"));
             });
-            
+
             root.AddPreset(factory => factory.Labels().DefaultHeader("preview.visualelements.justify.end", builder: builder => builder.SetStyle(style => { style.alignSelf = Align.Center; style.marginBottom = new Length(10, Pixel); })));
             root.AddComponent(builder =>
             {
@@ -73,7 +73,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel.Previ
                 builder.AddPreset(factory => factory.Buttons().Button(text: "1"));
                 builder.AddPreset(factory => factory.Buttons().Button(text: "2"));
             });
-            
+
             root.AddPreset(factory => factory.Labels().DefaultHeader("preview.visualelements.justify.around", builder: builder => builder.SetStyle(style => { style.alignSelf = Align.Center; style.marginBottom = new Length(10, Pixel); })));
             root.AddComponent(builder =>
             {
@@ -81,7 +81,7 @@ namespace TimberAPIExample.Examples.UIBuilderExample.UIBuilderPreviewPanel.Previ
                 builder.AddPreset(factory => factory.Buttons().Button(text: "1"));
                 builder.AddPreset(factory => factory.Buttons().Button(text: "2"));
             });
-            
+
             root.AddPreset(factory => factory.Labels().DefaultHeader("preview.visualelements.justify.between", builder: builder => builder.SetStyle(style => { style.alignSelf = Align.Center; style.marginBottom = new Length(10, Pixel); })));
             root.AddComponent(builder =>
             {

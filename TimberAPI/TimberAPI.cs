@@ -15,7 +15,7 @@ namespace TimberbornAPI
         /// APIs for dependency injection and management
         /// </summary>
         public static IDependencyRegistry DependencyRegistry = new DependencyRegistry();
-      
+
         /// <summary>
         /// APIs for better integration between dependency injection and harmony
         /// Able to access all loaded dependency classes with a static instance

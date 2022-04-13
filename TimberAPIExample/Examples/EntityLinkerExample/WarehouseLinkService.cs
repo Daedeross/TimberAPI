@@ -32,7 +32,7 @@ namespace TimberAPIExample.Examples.EntityLinkerExample
         /// </summary>
         public override void Tick()
         {
-            if(_linker == null && _linker.EntityLinks.Count == 0)
+            if (_linker == null && _linker.EntityLinks.Count == 0)
             {
                 return;
             }

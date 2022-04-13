@@ -44,7 +44,7 @@ namespace TimberbornAPI.UIBuilderSystem.CustomElements
             text = loc.T(_textLocKey);
         }
 
-        #pragma warning disable CS0108, CS0114
+#pragma warning disable CS0108, CS0114
         private void OnCustomStyleResolved(CustomStyleResolvedEvent e)
         {
             _nineSliceBackground.GetDataFromStyle(customStyle);

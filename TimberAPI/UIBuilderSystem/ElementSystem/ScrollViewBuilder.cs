@@ -10,12 +10,12 @@ namespace TimberbornAPI.UIBuilderSystem.ElementSystem
     public class ScrollViewBuilder : BaseElementBuilder<ScrollView, ScrollViewBuilder>, IScrollableBuilder<ScrollViewBuilder>
     {
         protected override ScrollViewBuilder BuilderInstance => this;
-        
-        public ScrollViewBuilder(VisualElementInitializer visualElementInitializer, IAssetLoader assetLoader, UiPresetFactory uiPresetFactory) 
+
+        public ScrollViewBuilder(VisualElementInitializer visualElementInitializer, IAssetLoader assetLoader, UiPresetFactory uiPresetFactory)
             : base(new ScrollView(), visualElementInitializer, assetLoader, uiPresetFactory)
         {
         }
-        
+
         public ScrollViewBuilder ModifyVerticalScroller(Action<Scroller> modifyScroller)
         {
             modifyScroller.Invoke(Root.verticalScroller);
@@ -27,7 +27,7 @@ namespace TimberbornAPI.UIBuilderSystem.ElementSystem
             modifyScroller.Invoke(Root.horizontalScroller);
             return this;
         }
-        
+
         public ScrollViewBuilder AddChildren(IEnumerable<VisualElement> children)
         {
             foreach (VisualElement visualElement in children)
